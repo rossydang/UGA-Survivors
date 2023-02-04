@@ -2,30 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Aim : MonoBehaviour
 {
-    public float runSpeed = 5f;
-    // Start is called before the first frame update
+
     public Rigidbody2D rb;
-    public Vector2 movement;
-    public Vector2 mousePos;
+    Vector2 movement;
+    Vector2 mousePos;
     public Camera cam;
+    private float runSpeed = 5;
+    // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
-    void Update(){
+    void Update()
+    {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
     }
 
-    void FixedUpdate() {
+    void FixedUpdate() 
+    {
         rb.MovePosition(rb.position + movement * runSpeed * Time.fixedDeltaTime);
-        //Vector2 lookDir = mousePos - rb.position;
-        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        //rb.rotation = angle;
+        Vector2 lookDir = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = angle;
     }
 }
