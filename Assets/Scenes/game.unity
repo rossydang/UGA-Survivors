@@ -8577,6 +8577,7 @@ GameObject:
   - component: {fileID: 2142862948}
   - component: {fileID: 2142862950}
   - component: {fileID: 2142862951}
+  - component: {fileID: 2142862952}
   m_Layer: 0
   m_Name: Mushroom_Follow
   m_TagString: Untagged
@@ -8644,7 +8645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142862947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.7, y: -26.15, z: 0}
+  m_LocalPosition: {x: -16.65, y: -26.15, z: 0}
   m_LocalScale: {x: 3.84, y: 5.1394196, z: -7.0936117}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -8665,7 +8666,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2.5
   target: {fileID: 854866948}
-  minimumDistance: 1
+  minimumDistance: 0.5
+  animator: {fileID: 2142862952}
 --- !u!114 &2142862951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8678,3 +8680,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828852102cc255f4481ba53ed78da750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2142862952
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142862947}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 349c86f30c8e8e442a0a5956fa959ab2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
